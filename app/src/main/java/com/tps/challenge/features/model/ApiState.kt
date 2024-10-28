@@ -1,4 +1,4 @@
-package com.tps.challenge.features
+package com.tps.challenge.features.model
 
 sealed class ApiState<out T> {
     object Empty : ApiState<Nothing>()

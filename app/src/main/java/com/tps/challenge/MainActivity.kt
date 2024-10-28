@@ -3,7 +3,7 @@ package com.tps.challenge
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.tps.challenge.TCApplication.R
-import com.tps.challenge.features.UserFeedFragment
+import com.tps.challenge.features.userFeed.UserFeedFragment
 
 /**
  * The initial Activity for the app.

@@ -10,5 +10,5 @@ interface GitHubServiceApi {
     suspend fun getAllUsers(): List<User>
 
     @GET("/users/{USER_ID}")
-    suspend fun getUserProfile(@Path("USER_ID")userId: String ): UserProfile
+    suspend fun getUserProfile(@Path("USER_ID") userId: String): UserProfile
 }

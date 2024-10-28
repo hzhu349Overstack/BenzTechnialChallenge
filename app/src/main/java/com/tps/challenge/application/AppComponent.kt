@@ -9,12 +9,14 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import com.tps.challenge.data.source.network.GithubRepositoryImpl
 import com.tps.challenge.data.source.network.GitHubRepository
 import com.tps.challenge.domain.FetchAllUserUseCase
+import com.tps.challenge.domain.UserProfileUseCase
 
 interface AppComponent {
-    val useCase: FetchAllUserUseCase
+    val fetchAllUserUseCase: FetchAllUserUseCase
+    val userProfileUseCase: UserProfileUseCase
 }
 
-class DefaultAppComponent: AppComponent{
+class DefaultAppComponent : AppComponent{
     private val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build()
@@ -32,7 +34,10 @@ class DefaultAppComponent: AppComponent{
         GithubRepositoryImpl(retrofitService)
     }
 
-    override val useCase: FetchAllUserUseCase
+    override val fetchAllUserUseCase: FetchAllUserUseCase
         get() = FetchAllUserUseCase(gitHubRepository)
+
+    override val userProfileUseCase: UserProfileUseCase
+        get() = UserProfileUseCase(gitHubRepository)
 
 }

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:elevation="8dp"
+    android:backgroundTint="@android:color/white"
+    app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ProgressBar
+            android:id="@+id/progress_bar_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_view_profile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/circle_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Login Id: 38"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:drawableStart="@drawable/ic_account_circle"
+            android:drawablePadding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image_view_profile"
+            app:layout_constraintTop_toTopOf="@id/image_view_profile"
+            tools:text="Login Id: 38" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Name: Hao Hou"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="8dp"
+            app:layout_constraintEnd_toEndOf="@id/id"
+            app:layout_constraintStart_toStartOf="@id/id"
+            app:layout_constraintTop_toBottomOf="@id/id"
+            tools:text="Name: Hao Hou" />
+
+        <TextView
+            android:id="@+id/company"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Company: University of Utah"
+            android:drawableStart="@drawable/ic_business"
+            android:drawablePadding="8dp"
+            app:layout_constraintEnd_toEndOf="@id/name"
+            app:layout_constraintStart_toStartOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="Company: University of Utah" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Location: Salt Lake City, UT"
+            android:drawableStart="@drawable/ic_location_on"
+            android:drawablePadding="8dp"
+            app:layout_constraintEnd_toEndOf="@id/company"
+            app:layout_constraintStart_toStartOf="@id/company"
+            app:layout_constraintTop_toBottomOf="@id/company"
+            tools:text="Location: Salt Lake City, UT" />
+
+        <TextView
+            android:id="@+id/followers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Followers: 151"
+            android:drawableStart="@drawable/ic_people"
+            android:drawablePadding="8dp"
+            app:layout_constraintEnd_toEndOf="@id/location"
+            app:layout_constraintStart_toStartOf="@id/location"
+            app:layout_constraintTop_toBottomOf="@id/location"
+            tools:text="Followers: 151" />
+
+        <TextView
+            android:id="@+id/following"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Following: 21"
+            android:drawableStart="@drawable/ic_person_add"
+            android:drawablePadding="8dp"
+            app:layout_constraintEnd_toEndOf="@id/followers"
+            app:layout_constraintStart_toStartOf="@id/followers"
+            app:layout_constraintTop_toBottomOf="@id/followers"
+            tools:text="Following: 21" />
+
+        <TextView
+            android:id="@+id/public_repos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Public Repos: 57"
+            android:drawableStart="@drawable/ic_code"
+            android:drawablePadding="8dp"
+            app:layout_constraintEnd_toEndOf="@id/following"
+            app:layout_constraintStart_toStartOf="@id/following"
+            app:layout_constraintTop_toBottomOf="@id/following"
+            tools:text="Public Repos: 57" />
+
+        <TextView
+            android:id="@+id/public_gists"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Public Gists: 5"
+            android:drawableStart="@drawable/ic_insert_drive_file"
+            android:drawablePadding="8dp"
+            app:layout_constraintEnd_toEndOf="@id/public_repos"
+            app:layout_constraintStart_toStartOf="@id/public_repos"
+            app:layout_constraintTop_toBottomOf="@id/public_repos"
+            tools:text="Public Gists: 5" />
+
+        <TextView
+            android:id="@+id/twitter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Twitter: haohou302"
+            android:drawableStart="@drawable/ic_twitter"
+            android:drawablePadding="8dp"
+            app:layout_constraintEnd_toEndOf="@id/public_gists"
+            app:layout_constraintStart_toStartOf="@id/public_gists"
+            app:layout_constraintTop_toBottomOf="@id/public_gists"
+            tools:text="Twitter: haohou302" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
