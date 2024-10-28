@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -30,12 +31,11 @@ class UserProfileFragment : Fragment() {
     }
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        view =  inflater.inflate(R.layout.fragment_user_profile, container, false)
+        view = inflater.inflate(R.layout.fragment_user_profile, container, false)
         userProfileViewModel = ViewModelProvider(
             requireActivity(),
             createGenericViewModelFactory {
@@ -57,31 +57,42 @@ class UserProfileFragment : Fragment() {
             when (userProfile) {
                 ApiState.Empty -> {
                 }
+
                 is ApiState.Error -> {
 
                 }
+
                 ApiState.Loading -> {
                     progressBar.visibility = View.VISIBLE
+                    view.findViewById<LinearLayout>(R.id.text_part).visibility = View.GONE
                 }
+
                 is ApiState.Success -> {
                     Log.d(TAG, userProfile.data.toString())
+
                     progressBar.visibility = View.GONE
-                    view.findViewById<TextView>(R.id.id).text = userProfile.data.id.toString()
-                    view.findViewById<TextView>(R.id.name).text = userProfile.data.name ?: "N/A"
-                    view.findViewById<TextView>(R.id.company).text = userProfile.data.company ?: "N/A"
-                    view.findViewById<TextView>(R.id.location).text = userProfile.data.location ?: "N/A"
-                    view.findViewById<TextView>(R.id.followers).text = userProfile.data.followers.toString() ?: "N/A"
-                    view.findViewById<TextView>(R.id.following).text = userProfile.data.following.toString() ?: "N/A"
-                    view.findViewById<TextView>(R.id.public_repos).text = userProfile.data.public_repos.toString() ?: "N/A"
-                    view.findViewById<TextView>(R.id.public_gists).text = userProfile.data.public_gists.toString() ?: "N/A"
-                    view.findViewById<TextView>(R.id.twitter).text = userProfile.data.twitter_username ?: "N/A"
+                    view.findViewById<LinearLayout>(R.id.text_part).visibility = View.VISIBLE
+
+                    setText(R.id.id, userProfile.data.id.toString())
+                    setText(R.id.name, userProfile.data.name)
+                    setText(R.id.company, userProfile.data.company)
+                    setText(R.id.location, userProfile.data.location)
+                    setText(R.id.followers, userProfile.data.followers?.toString())
+                    setText(R.id.following, userProfile.data.following?.toString())
+                    setText(R.id.public_repos, userProfile.data.public_repos?.toString())
+                    setText(R.id.public_gists, userProfile.data.public_gists?.toString())
+                    setText(R.id.twitter, userProfile.data.twitter_username)
+
                     Glide.with(this)
                         .load(userProfile.data.avatar_url)
                         .into(view.findViewById(R.id.image_view_profile))
                 }
             }
-
         }
+    }
+
+    fun setText(viewId: Int, text: String?) {
+        view.findViewById<TextView>(viewId).text = text ?: "N/A"
     }
 
     companion object {
