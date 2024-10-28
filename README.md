@@ -5,9 +5,8 @@ This project is the demo of fetching and displaying a list of GitHub Users.
 ![alt text](./screen_shot.mp4)
 <video controls width="500">
   <source src="./screen_shot.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+  Your browser does not support the video tag. <a href="./screen_shot.mp4">Download the video</a> instead.
 </video>
-
 
 Here are the revised key points for the project:
 
