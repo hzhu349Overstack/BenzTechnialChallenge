@@ -8,7 +8,7 @@ This project is the demo of fetching and displaying a list of GitHub Users.
   Your browser does not support the video tag. <a href="./screen_shot.mp4">Download the video</a> instead.
 </video>
 
-Here are the revised key points for the project:
+Here are the key points for the project:
 
 1. **Minimum SDK Level**: The project targets a minimum SDK level of 26, ensuring compatibility with Android 8.0 (Oreo) and above.
 
@@ -16,7 +16,7 @@ Here are the revised key points for the project:
     * **Lifecycle**: Utilizes Lifecycle-aware components to observe and handle UI states based on lifecycle changes, improving resource management and UI consistency.
     * **ViewModel**: Manages UI-related data with lifecycle awareness, allowing data to persist across configuration changes, such as screen rotations.
 
-3. **Architecture**: The app follows the MVVM (Model-View-ViewModel) architecture pattern, which promotes separation of concerns. Coroutines are used to handle asynchronous tasks efficiently, providing a cleaner and more scalable architecture.
+3. **Architecture**: The app follows the MVVM (Model-View-ViewModel) architecture pattern and clean structure, which promotes separation of concerns. Coroutines are used to handle asynchronous tasks efficiently, providing a cleaner and more scalable architecture.
 
 4. **UI Implementation**:
     * The app launches with an Activity that hosts a `UserFeedFragment` displaying a list of users.
