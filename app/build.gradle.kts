@@ -92,6 +92,9 @@ dependencies {
     implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation(libs.retrofit.converter.moshi)
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
+    testImplementation ("io.mockk:mockk:1.12.0")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
 
     // Adding Glide
     implementation(libs.glide)  // Glide core library
